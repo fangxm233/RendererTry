@@ -1,0 +1,10 @@
+C:\Users\fangxm\Documents\Visual Studio 2017\Projects\RendererTry\RendererTry\bin\Debug\RendererTry.exe.config
+C:\Users\fangxm\Documents\Visual Studio 2017\Projects\RendererTry\RendererTry\bin\Debug\RendererTry.exe
+C:\Users\fangxm\Documents\Visual Studio 2017\Projects\RendererTry\RendererTry\bin\Debug\RendererTry.pdb
+C:\Users\fangxm\Documents\Visual Studio 2017\Projects\RendererTry\RendererTry\obj\Debug\RendererTry.csprojResolveAssemblyReference.cache
+C:\Users\fangxm\Documents\Visual Studio 2017\Projects\RendererTry\RendererTry\obj\Debug\RendererTry.Form1.resources
+C:\Users\fangxm\Documents\Visual Studio 2017\Projects\RendererTry\RendererTry\obj\Debug\RendererTry.Properties.Resources.resources
+C:\Users\fangxm\Documents\Visual Studio 2017\Projects\RendererTry\RendererTry\obj\Debug\RendererTry.csproj.GenerateResource.Cache
+C:\Users\fangxm\Documents\Visual Studio 2017\Projects\RendererTry\RendererTry\obj\Debug\RendererTry.csproj.CoreCompileInputs.cache
+C:\Users\fangxm\Documents\Visual Studio 2017\Projects\RendererTry\RendererTry\obj\Debug\RendererTry.exe
+C:\Users\fangxm\Documents\Visual Studio 2017\Projects\RendererTry\RendererTry\obj\Debug\RendererTry.pdb
