@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -86,6 +87,46 @@ namespace RendererTry
         public static Vector3 operator -(Vector3 v1, Vector3 v2)
         {
             return new Vector3(v1.x - v2.x, v1.y - v2.y, v1.z - v2.z);
+        }
+
+        public static Vector3 operator *(int i,Vector3 v)
+        {
+            return new Vector3(v.x * i, v.y * i, v.z * i);
+        }
+    }
+
+    public class Vectorx
+    {
+        public Vector3 point, points_r;
+        public Color color;
+        public Vector2 point_2D;
+        public Vectorx(Vector3 po, Color co, Vector3 cubepo)
+        {
+            point = po;
+            color = co;
+            point_2D = Math.PointTo2D(po + cubepo);
+        }
+
+        public Vectorx(Vector2 po, Color co)
+        {
+            color = co;
+            point_2D = po;
+        }
+
+        public void RotateTo(Vector3 r, Vector3 po)
+        {
+            points_r = Math.GetRelativePosition(point, new Vector3(), r);
+            point_2D = Math.PointTo2D(points_r + po);
+        }
+
+        public static bool operator ==(Vectorx v1, Vector2 v2)
+        {
+            return (v1.point_2D.x == v2.x && v1.point_2D.y == v2.y) ? true : false;
+        }
+
+        public static bool operator !=(Vectorx v1, Vector2 v2)
+        {
+            return !(v1 == v2);
         }
     }
 }

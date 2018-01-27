@@ -109,6 +109,7 @@ namespace RendererTry
 
         public void SetPixel(int x, int y, Color c)
         {
+            if (x > Width || x < 0 || y > Height || y < 0) return;
             unsafe
             {
                 byte* ptr = (byte*)Iptr;

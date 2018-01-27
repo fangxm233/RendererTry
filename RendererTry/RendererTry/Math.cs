@@ -22,6 +22,46 @@ namespace RendererTry
             return new Vector2((v.x - Form1.main.Width / 2) / Form1.main.Width, (v.y - Form1.main.Height / 2) / Form1.main.Height);
         }
 
+        /// <summary>
+        /// 返回点绕原点旋转值
+        /// </summary>
+        /// <param name="pw">要旋转点的坐标</param>
+        /// <param name="op">原点坐标</param>
+        /// <param name="r">角度</param>
+        /// <returns></returns>
+        public static Vector3 GetRelativePosition(Vector3 pw, Vector3 op, Vector3 r)
+        {
+            Vector3 point = new Vector3(pw.x, pw.y, pw.z) - op;
+            point = new Vector3((float)(point.z * System.Math.Sin(r.y) + point.x * System.Math.Cos(r.y)), point.y, (float)(point.z * System.Math.Cos(r.y) - point.x * System.Math.Sin(r.y)));
+            point = new Vector3(point.x, (float)(point.y * System.Math.Cos(r.x) - point.z * System.Math.Sin(r.x)), (float)(point.y * System.Math.Sin(r.x) + point.z * System.Math.Cos(r.x)));
+            point = new Vector3((float)(point.x * System.Math.Cos(r.z) - point.y * System.Math.Sin(r.z)), (float)(point.x * System.Math.Sin(r.z) + point.y * System.Math.Cos(r.z)), point.z);
+            return point + op;
+        }
+
+        public static Color Lerp(Color a, Color b, float t)
+        {
+            if (t < 0) t = 0;
+            if (t > 1) t = 1;
+            return Color.FromArgb((int)(a.A + (b.A - a.A) * t), (int)(a.R + (b.R - a.R) * t), (int)(a.G + (b.G - a.G) * t), (int)(a.B + (b.B - a.B) * t));
+        }
+
+        public static Color Lerp(Vectorx v1, Vectorx v2, Vector2 po)
+        {
+            return Lerp(v1.color, v2.color, GetLength(v1.point_2D, po) / GetLength(v1.point_2D, v2.point_2D));
+        }
+
+        public static float GetLength(Vector3 v1, Vector3 v2)
+        {
+            Vector3 v = v1 - v2;
+            return (float)System.Math.Sqrt(v.x * v.x + v.y * v.y + v.z * v.z);
+        }
+
+        public static float GetLength(Vector2 v1, Vector2 v2)
+        {
+            Vector2 v = v1 - v2;
+            return (float)System.Math.Sqrt(v.x * v.x + v.y * v.y);
+        }
+
         public static bool IntersectTriangle(Vector3 orig, Vector3 dir, Vector3 v0, Vector3 v1, Vector3 v2, out float t, out float u, out float v)
         {
             t = 0;
